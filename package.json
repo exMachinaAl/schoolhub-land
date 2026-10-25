@@ -1,0 +1,13 @@
+{
+  "name": "schoolhub-portal",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Portal direktori enam aplikasi sekolah, pengelolaan server-side, tanpa dependensi pihak ketiga.",
+  "engines": {"node": ">=20.0.0"},
+  "scripts": {
+    "start": "node server/server.mjs",
+    "setup-admin": "node scripts/setup-admin.mjs",
+    "test": "node --test"
+  }
+}

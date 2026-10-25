@@ -1,0 +1,107 @@
+{
+  "school": {
+    "name": "Portal Sekolah Digital",
+    "shortName": "SchoolHub",
+    "subtitle": "Pusat akses layanan digital sekolah",
+    "contactEmail": "",
+    "academicYear": "2026 / 2027"
+  },
+  "applications": [
+    {
+      "id": "tu",
+      "name": "Sistem Tata Usaha",
+      "shortDescription": "Administrasi persuratan, arsip, legalisir, dan layanan kepegawaian dalam satu ruang kerja.",
+      "audience": "Staf TU, kepala sekolah, petugas berizin",
+      "category": "internal",
+      "icon": "file-text",
+      "url": "",
+      "requirements": "Login staf dan hak akses berbasis peran; hanya pengguna yang berwenang boleh melihat data dan arsip.",
+      "features": [
+        "Persuratan",
+        "Arsip digital",
+        "Legalisir"
+      ],
+      "visible": true
+    },
+    {
+      "id": "lms",
+      "name": "Learning Management System",
+      "shortDescription": "Kegiatan belajar, kelas, tugas, kuis, TKA, materi, video interaktif, dan penilaian.",
+      "audience": "Guru dan siswa terdaftar",
+      "category": "sekolah",
+      "icon": "graduation-cap",
+      "url": "",
+      "requirements": "Login akun sekolah; akses kelas, tugas, dan nilai ditentukan oleh keanggotaan dan peran.",
+      "features": [
+        "Kelas & materi",
+        "Kuis & TKA",
+        "Penilaian"
+      ],
+      "visible": true
+    },
+    {
+      "id": "perpustakaan",
+      "name": "Perpustakaan Digital",
+      "shortDescription": "Pencarian koleksi, katalog buku, peminjaman dan pengembalian mandiri dengan QR atau RFID.",
+      "audience": "Pengunjung, anggota, dan petugas",
+      "category": "publik",
+      "icon": "book-open",
+      "url": "",
+      "requirements": "Katalog dapat dibuka publik jika diaktifkan; transaksi peminjaman memerlukan identitas anggota terverifikasi.",
+      "features": [
+        "Katalog",
+        "Pinjam & kembali",
+        "QR / RFID"
+      ],
+      "visible": true
+    },
+    {
+      "id": "inventaris",
+      "name": "Sistem Inventaris",
+      "shortDescription": "Pendataan sarana prasarana, lokasi aset, kondisi barang, dan laporan inventaris sekolah.",
+      "audience": "Operator sarpras dan pimpinan berizin",
+      "category": "internal",
+      "icon": "boxes",
+      "url": "",
+      "requirements": "Login internal; pembatasan akses CRUD, audit perubahan, dan data aset berdasarkan kewenangan.",
+      "features": [
+        "Aset",
+        "Sarpras",
+        "Laporan"
+      ],
+      "visible": true
+    },
+    {
+      "id": "magang",
+      "name": "SIM Magang / PKL",
+      "shortDescription": "Administrasi praktik kerja lapangan, bimbingan, penilaian, dan dokumen peserta magang.",
+      "audience": "Siswa, pembimbing, operator, dan mitra terdaftar",
+      "category": "sekolah",
+      "icon": "briefcase-business",
+      "url": "",
+      "requirements": "Login berdasarkan peran; mitra hanya dapat melihat data peserta yang menjadi kewenangannya.",
+      "features": [
+        "Pengajuan",
+        "Bimbingan",
+        "Evaluasi"
+      ],
+      "visible": true
+    },
+    {
+      "id": "absensi",
+      "name": "Absensi Digital",
+      "shortDescription": "Pencatatan kehadiran siswa dan pengelolaan sesi absensi untuk kegiatan belajar.",
+      "audience": "Guru, siswa, dan operator terdaftar",
+      "category": "sekolah",
+      "icon": "calendar-check",
+      "url": "",
+      "requirements": "Login pengguna sekolah; izin melihat dan mengubah data kehadiran harus dibatasi di server.",
+      "features": [
+        "Kehadiran",
+        "Sesi kelas",
+        "Rekap"
+      ],
+      "visible": true
+    }
+  ]
+}

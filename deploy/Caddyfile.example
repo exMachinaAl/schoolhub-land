@@ -1,0 +1,7 @@
+# Ganti portal.sekolah.sch.id dengan domain RESMI yang telah tersedia.
+# Caddy otomatis menyediakan HTTPS jika domain publik telah mengarah ke server.
+portal.sekolah.sch.id {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:3000
+    # Opsional: panel /admin dan /api/admin* dibatasi lewat VPN atau identity proxy.
+}

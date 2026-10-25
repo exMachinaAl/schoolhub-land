@@ -1,0 +1,6 @@
+# Hash akun admin / sesi; jangan pernah dibagikan
+/data/auth.json
+/data/*.tmp
+.env
+node_modules/
+*.log

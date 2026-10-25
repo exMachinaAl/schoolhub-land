@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0e2244"/><title>Panel Pengelola — SchoolHub</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="/admin.css"/><script src="/admin.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="admin-top"><div class="shell top-inner"><a href="/" class="admin-brand"><span class="brand-mark">S</span><span><strong>SchoolHub</strong><small>CONSOLE PENGELOLA</small></span></a><nav><a href="/" target="_blank" rel="noopener noreferrer">Lihat portal ↗</a><button type="button" id="logout" hidden>Keluar</button></nav></div></header>
+  <main id="main" class="shell">
+    <section id="login-view" class="login-view" hidden>
+      <div class="login-aside"><span class="eyebrow">AKSES PENGELOLA</span><h1>Kelola portal<br/><em>dengan aman.</em></h1><p>Alamat layanan, identitas sekolah, dan kartu aplikasi dapat diubah dari satu tempat. Login di sini hanya mengelola SchoolHub, bukan akun sistem sekolah lain.</p><div class="security-note">🔒 Password diverifikasi pada server. Perubahan konfigurasi membutuhkan sesi dan token CSRF.</div></div>
+      <form class="login-box" id="login-form"><span class="mini-icon">⌘</span><h2>Masuk sebagai admin</h2><p>Masukkan password yang dibuat melalui perintah <code>npm run setup-admin</code>.</p><label for="password">Password administrator</label><input id="password" type="password" required minlength="12" autocomplete="current-password" placeholder="Password admin"/><button type="submit" id="login-submit">Masuk ke panel <span>→</span></button><p id="login-message" class="feedback" role="status"></p></form>
+    </section>
+    <section id="editor-view" hidden>
+      <div class="editor-head"><div><span class="eyebrow">PUSAT KONTROL PORTAL</span><h1>Pengaturan SchoolHub<span class="tiny-dot">.</span></h1><p>Atur informasi dan tautan aplikasi. Simpan perubahan agar langsung muncul pada halaman publik.</p></div><div class="editor-actions"><button type="button" id="reset-button" class="secondary-btn">Batalkan perubahan</button><button type="button" id="save-button" class="primary-btn">Simpan konfigurasi <span>→</span></button></div></div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div class="editor-layout"><aside class="side-nav" aria-label="Pengaturan"><a href="#identity" class="side-active">01 <span>Identitas sekolah</span></a><a href="#apps">02 <span>Daftar aplikasi</span></a><a href="#diagnostics">03 <span>Periksa layanan</span></a><a href="#history">04 <span>Riwayat & audit</span></a><div class="side-help"><strong>Privasi & keamanan</strong><p>URL internal dan akun login tidak otomatis diamankan oleh portal. Setiap backend wajib memeriksa autentikasi dan izin.</p></div></aside>
+        <div class="editor-content"><section id="identity" class="section-panel"><div class="panel-header"><div><span class="eyebrow">PROFIL</span><h2>Identitas sekolah</h2></div><span class="panel-count">01</span></div><div class="form-grid"><label>Nama sekolah<input id="school-name" maxlength="100"/></label><label>Nama singkat / brand<input id="school-short" maxlength="28"/></label><label class="wide">Deskripsi portal<input id="school-subtitle" maxlength="140"/></label><label>Tahun ajaran<input id="school-year" maxlength="40"/></label><label>Email bantuan (opsional)<input id="school-email" type="email" maxlength="180"/></label></div></section>
+          <section id="apps" class="section-panel"><div class="panel-header"><div><span class="eyebrow">DIREKTORI</span><h2>Enam sistem sekolah</h2><p>Alamat kosong ditampilkan sebagai belum terhubung. Sembunyikan kartu bila belum ingin dipublikasikan.</p></div><span class="panel-count" id="app-counter">06</span></div><div id="app-editors" class="app-editors"></div></section>
+          <section id="diagnostics" class="section-panel">
+            <div class="panel-header"><div><span class="eyebrow">DIAGNOSTIK • MANUAL</span><h2>Periksa koneksi layanan</h2><p>Uji apakah domain HTTPS setiap aplikasi memberikan respons. Hasil ini bukan bukti login, izin, maupun keamanan aplikasi.</p></div><span class="panel-count">03</span></div>
+            <div class="panel-tools"><button class="primary-btn" type="button" id="check-links">Periksa keenam layanan</button><span class="helper-text" id="check-time">Belum diperiksa.</span></div>
+            <div id="check-results" class="results-grid" aria-live="polite"></div>
+            <p class="tool-note">Hanya URL HTTPS dengan alamat IPv4 publik yang dapat diuji. Sistem localhost/IP privat akan ditandai tidak dapat diuji, bukan offline. Pemeriksaan manual dibatasi satu kali setiap 30 detik.</p>
+          </section>
+          <section id="history" class="section-panel">
+            <div class="panel-header"><div><span class="eyebrow">KONTROL PERUBAHAN</span><h2>Riwayat & audit pengelola</h2><p>Setiap penyimpanan membuat snapshot konfigurasi sebelumnya. Maksimal 20 revisi dan 250 entri audit lokal.</p></div><span class="panel-count">04</span></div>
+            <div class="panel-tools"><button class="secondary-btn" type="button" id="refresh-history">Muat ulang riwayat</button><span class="helper-text">Pemulihan tidak mengubah password admin atau data aplikasi lain.</span></div>
+            <h3 class="tool-subhead">Riwayat konfigurasi</h3><div id="revisions" class="history-list" aria-live="polite"></div>
+            <h3 class="tool-subhead">Audit aktivitas terakhir</h3><div id="audit-events" class="history-list" aria-live="polite"></div>
+          </section>
+          <div class="editor-foot"><p>Setiap tautan aplikasi ditampilkan kepada pengunjung. Jangan memasukkan token, password, atau URL rahasia.</p><button type="button" id="save-bottom" class="primary-btn">Simpan semua perubahan →</button></div>
+        </div></div>
+    </section>
+  </main>
+  <footer class="admin-footer"><div class="shell">SchoolHub v2.1 · Portal katalog aplikasi sekolah · Panel pengelola bukan sistem SSO</div></footer>
+</body></html>
